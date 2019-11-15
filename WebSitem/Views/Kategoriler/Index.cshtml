@@ -5,7 +5,7 @@
 }
 
 <h2>Kategoriler</h2>
-<table class="table table-dark">
+<table class="table table-dark"id="tblktg">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -20,11 +20,11 @@
         @foreach (var kategori in ViewBag.Ktg)
         {
 
-            <tr data-ktg-id=@kategori.KategoriId>
-                <th scope="row">1</th>
+            <tr>
+                
                 <td>@kategori.KategoriId</td>
                 <td>@kategori.KategoriAd</td>
-                <th> <a href="#" class="btn btn-danger ktgSil" data-ktg-id=@kategori.KategoriId>Kategori Sil</a></th>
+                <th> <a  class="btn btn-danger ktgSil" data-id="@kategori.KategoriId">Kategori Sil</a></th>
 
 
 
@@ -34,6 +34,45 @@
 
     </tbody>
 </table>
+@section scripts {
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            $("#tblktg").on("click", ".ktgSil", function () {
+                if (confirm("Silmek isteidğinize eminmisiniz?"))
+                {
+                var ktgId = $(this).data("id")
+                $.ajax({
+                    type: "POST",
+                    url: "Kategoriler/KtgSil",
+                    data: { id: ktgId },
+                    success: function () {
+                            location.reload();
+                            console.log("silme işlemi başarılı...");
+
+
+                        }
+
+                }
+                );
+                }
+
+                    
+
+                
+
+
+
+
+
+            })
+
+        });
+
+
+
+    </script>
+    }
 
 
 

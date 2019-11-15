@@ -40,6 +40,24 @@ namespace WebSitem.Controllers
             return View();
 
         }
+        public ActionResult KtgSil(int? id)
+        {
+            Kategori kategori = db.Kategoriler.Find(id);
+            
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult KtgSil(int id)
+        {
+            Kategori kategori = db.Kategoriler.Find(id);
+            db.Kategoriler.Remove(kategori);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+
+        }
        
 
     }
