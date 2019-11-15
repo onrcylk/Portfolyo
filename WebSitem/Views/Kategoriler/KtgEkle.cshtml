@@ -1,0 +1,49 @@
+﻿@using WebSitem.Models
+@model Kategori
+@{
+    ViewBag.Title = "Kategoriler";
+}
+
+<h2>Kategoriler</h2>
+<body>
+    <form action="@Url.Action("KtgEkle", "Kategoriler")" method="post">
+        @Html.AntiForgeryToken()
+
+        
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.KategoriAd)
+            @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.KategoriAd, null, new { @class = "text-danger" })
+        </div>
+
+        <button type="submit" class="btn btn-primary"> Kategori Ekle</button>
+       
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+

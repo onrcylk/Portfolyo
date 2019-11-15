@@ -1,0 +1,32 @@
+﻿@using WebSitem.Models
+@model List<Musteri>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Musteriler</h2>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Musteri Id</th>
+            <th scope="col">Musteri Ad</th>
+            <th scope="col">Musteri Soyad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Musteri musteri in Model)
+        {
+
+            <tr>
+                <th scope="row">1</th>
+                <td>@musteri.MusteriId</td>
+                <td>@musteri.MusteriAd</td>
+                <td>@musteri.MusteriSoyad</td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,40 @@
+﻿@using WebSitem.Models
+@model Urun
+@{
+    ViewBag.Title = "UrunEkle";
+}
+<h2>UrunEkle</h2>
+<body>
+    <form action="/Urunler/UrunEkle" method="post">
+
+    Ürün Adı: <input type="text" name="urunAd" />
+    Ürün Adet: <input type="text" name="urunAdet" />
+    
+    Kategori:
+    <select name="kId">
+       @foreach (var item in ViewBag.Ktg)
+       {
+           <option value="@item.KategoriId">
+               @item.KategoriAd
+           </option>
+       }
+    </select>
+    <br />
+    <br />
+    <input type="submit"  value="Kaydet" />
+    <a href="/Urunler">İptal</a>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+

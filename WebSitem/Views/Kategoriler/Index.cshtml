@@ -1,0 +1,46 @@
+﻿@using WebSitem.Models
+@model Kategori
+@{
+    ViewBag.Title = "Kategoriler";
+}
+
+<h2>Kategoriler</h2>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Kategori Ad</th>
+
+
+            <th> <a href="/Kategoriler/KtgEkle" class="btn btn-danger">Kategori Ekle</a></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kategori in ViewBag.Ktg)
+        {
+
+            <tr data-ktg-id=@kategori.KategoriId>
+                <th scope="row">1</th>
+                <td>@kategori.KategoriId</td>
+                <td>@kategori.KategoriAd</td>
+                <th> <a href="#" class="btn btn-danger ktgSil" data-ktg-id=@kategori.KategoriId>Kategori Sil</a></th>
+
+
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+

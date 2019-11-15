@@ -1,0 +1,89 @@
+﻿@using WebSitem.Models
+@model Urun
+@{
+    ViewBag.Title = "Urun";
+}
+
+<h2>Urunler</h2>
+<table class="table table-dark" id="tblUrunler">
+    <thead>
+        <tr>
+
+            <th scope="col">UrunId</th>
+            <th scope="col">Urun Adı</th>
+            <th scope="col">Urun Adet</th>
+            <th scope="col">Kategori Ad</th>
+
+            <th> <a href="/Urunler/UrunEkle" class="btn btn-danger">Ürün Ekle</a></th>
+            <th> <a href="/Kategoriler/KtgEkle" class="btn btn-danger">Kategori Ekle</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.UrunEkle)
+        {
+
+            <tr>
+
+                <td>@item.UrunId</td>
+                <td>@item.UrunAd</td>
+                <td>@item.UrunAdet</td>
+                <td>@item.Kategori.KategoriAd</td>
+                <td> <a class="btn btn-danger btnUrunSil" data-id="@item.UrunId">Sil</a></td>
+
+
+
+
+
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+@section scripts  {
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            $("#tblUrunler").on("click", ".btnUrunSil", function () {
+                if (confirm("Silmek isteidğinize eminmisiniz?")) {
+
+                    var urunId = $(this).data("id");
+                    $.ajax({
+                        type: "POST",
+                        url: "/Urunler/Sil",
+                        data: { id: urunId },
+                        success: function () {
+                            location.reload();
+                            console.log("silme işlemi başarılı...");
+
+
+                        }
+
+
+                    });
+                }
+
+
+            });
+
+
+
+        });
+
+
+
+    </script>
+
+
+
+
+
+}
+
+
+
+
+
+
+
