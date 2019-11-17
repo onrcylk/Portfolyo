@@ -22,7 +22,13 @@ namespace WebSitem.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "İletişim";
+
+            return View();
+        }
+        public ActionResult Hosgeldiniz()
+        {
+            ViewBag.Message = "";
 
             return View();
         }
