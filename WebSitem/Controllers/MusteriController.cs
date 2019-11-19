@@ -13,8 +13,28 @@ namespace WebSitem.Controllers
         // GET: Musteri
         public ActionResult Index()
         {
-            List<Musteri> Musteriler = db.Musteriler.ToList();
-            return View(Musteriler);
+            List<Musteri> musteri= db.Musteriler.ToList();
+            ViewBag.Musteri = db.Musteriler.ToList();
+            return View();
+        }
+        public ActionResult MusteriEkle(int? id)
+        {
+            List<Musteri> musteri = db.Musteriler.ToList();
+            return View();
+        }
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MusteriEkle(Musteri musteri)
+        {
+            ViewBag.Musteri = db.Musteriler.ToList();
+            if (ModelState.IsValid)
+            {
+                db.Musteriler.Add(musteri);
+                db.SaveChanges();
+              return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }

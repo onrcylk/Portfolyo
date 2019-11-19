@@ -1,32 +1,83 @@
 ﻿@using WebSitem.Models
-@model List<Musteri>
+@model Musteri
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Musteriler</h2>
-<table class="table table-dark">
+<a href="@Url.Action("MusteriEkle","Musteri")"class="btn btn-danger">Ekle</a>
+<table class="table table-dark" id="tblmusteri">
     <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Musteri Id</th>
-            <th scope="col">Musteri Ad</th>
-            <th scope="col">Musteri Soyad</th>
-        </tr>
+      
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Musteri Id</th>
+        <th scope="col">Musteri Ad</th>
+        <th scope="col">Musteri Soyad</th>
+
+    </tr>
     </thead>
     <tbody>
-        @foreach (Musteri musteri in Model)
+        
+        
+        @foreach (Musteri musteri in ViewBag.Musteri)
         {
 
-            <tr>
-                <th scope="row">1</th>
-                <td>@musteri.MusteriId</td>
-                <td>@musteri.MusteriAd</td>
-                <td>@musteri.MusteriSoyad</td>
+        <tr>
+            <th scope="row">1</th>
+            <td>@musteri.MusteriId</td>
+            <td>@musteri.MusteriAd</td>
+            <td>@musteri.MusteriSoyad</td>
 
-            </tr>
+            
+
+        </tr>
 
         }
     </tbody>
 </table>
+@*@section scripts{
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            $("#tblmusteri").on("click", ".musteriEkle", function () {
+                if (confirm("Eklemek istediğinize eminmisiniz?")) {
+                    var musteriId = $(this).data("id")
+                    $.ajax({
+                        type: "POST",
+                        url: "Musteriler/MusteriEkle",
+                        data: { id: musteriId },
+                        success: function () {
+                            location.reload();
+                            console.log("Eklene işlemi başarılı...");
+
+
+                        }
+
+                    }
+                    );
+                }
+
+
+
+
+
+
+
+
+
+            })
+
+        });
+
+
+
+    </script>*@
+
+
+
+
+
+
+@*}*@
 

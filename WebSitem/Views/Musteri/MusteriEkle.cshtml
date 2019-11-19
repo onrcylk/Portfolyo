@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "MusteriEkle";
+}
+
+<h2>Musteri Ekle</h2>
+@using WebSitem.Models
+@model Musteri
+
+
+<body>
+    <form action="@Url.Action("MusteriEkle", "Musteri")" method="post">
+        @Html.AntiForgeryToken()
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.MusteriAd)
+            @Html.TextBoxFor(x => x.MusteriAd, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.MusteriAd, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.MusteriSoyad)
+            @Html.TextBoxFor(x => x.MusteriSoyad, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.MusteriSoyad, null, new { @class = "text-danger" })
+        </div>
+
+        <button type="submit" class="btn btn-primary"> Ekle </button>
+    </form>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+

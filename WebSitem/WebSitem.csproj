@@ -189,6 +189,7 @@
     <Content Include="fonts\themefisher-font692c.eot" />
     <Content Include="fonts\themefisher-font692c.ttf" />
     <Content Include="fonts\themefisher-font692c.woff" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\form.min.js" />
     <Content Include="Scripts\isotope.pkgd.min.js" />
@@ -231,6 +232,7 @@
     <Content Include="Views\Kategoriler\Index.cshtml" />
     <Content Include="Views\Kategoriler\KtgEkle.cshtml" />
     <Content Include="Views\Home\Hosgeldiniz.cshtml" />
+    <Content Include="Views\Musteri\MusteriEkle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

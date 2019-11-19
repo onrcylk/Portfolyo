@@ -15,8 +15,7 @@ namespace WebSitem.Controllers
         // GET: Urunler
         public ActionResult Index()
         {
-            List<Kategori> kategoris = db.Kategoriler.ToList();
-            ViewBag.Ktg = kategoris;
+           
             List<Urun> Urunler = db.Urunler.ToList();
             ViewBag.UrunEkle = Urunler;
             return View();
