@@ -63,12 +63,18 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -133,9 +139,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911141004456_Ilk.cs" />
-    <Compile Include="Migrations\201911141004456_Ilk.Designer.cs">
-      <DependentUpon>201911141004456_Ilk.cs</DependentUpon>
+    <Compile Include="Migrations\201911190945365_Ilk.cs" />
+    <Compile Include="Migrations\201911190945365_Ilk.Designer.cs">
+      <DependentUpon>201911190945365_Ilk.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Kategori.cs" />
@@ -171,6 +177,7 @@
     <Content Include="img\author.png" />
     <Content Include="img\banner.jpg" />
     <Content Include="img\logom.mp4" />
+    <Content Include="img\logom12.mp4" />
     <Content Include="img\logomefect.mp4" />
     <Content Include="img\mylogo1.jpg" />
     <Content Include="img\mylogo2.jpg" />
@@ -249,8 +256,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911141004456_Ilk.resx">
-      <DependentUpon>201911141004456_Ilk.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911190945365_Ilk.resx">
+      <DependentUpon>201911190945365_Ilk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
