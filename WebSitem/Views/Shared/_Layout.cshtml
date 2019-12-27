@@ -24,7 +24,7 @@
         <link href="~/Content/main.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/main.css">
         <link id="color-changer" rel="stylesheet" href="~/Content/colors/red.css" />
-
+<style>.container {background-color: rgba(255, 255, 255, 0);}</style>
 
    
     @Styles.Render("~/Content/css")
@@ -44,12 +44,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
-                    <li>@Html.ActionLink("Hakkımda", "About", "Home")</li>
                     
-                    <li>@Html.ActionLink("Urunler", "Index", "Urunler")</li>
-                    <li>@Html.ActionLink("Musteriler", "Index", "Musteri")</li>
-                    <li>@Html.ActionLink("UrunEkle", "UrunEkle", "Urunler")</li>
-                    <li>@Html.ActionLink("Kategoriler", "Index", "Kategoriler")</li>
+                    
+                    
+					
                 </ul>
             </div>
         </div>

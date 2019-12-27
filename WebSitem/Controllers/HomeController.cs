@@ -32,5 +32,11 @@ namespace WebSitem.Controllers
 
             return View();
         }
+        public ActionResult Demo()
+        {
+            ViewBag.Message = "Demo";
+
+            return View();
+        }
     }
 }

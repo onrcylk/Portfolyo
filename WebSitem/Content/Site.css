@@ -2,6 +2,23 @@
     padding-top: 50px;
     padding-bottom: 20px;
 }
+CSS
+.bgSizeCover {
+  background-image: url(/img/index.gif);
+  background-size: cover;
+  width: 160px;
+  height: 160px;
+  border: 2px solid;
+  color: pink;
+  resize: both;
+  overflow: scroll;
+}
+.transparent-style{
+
+    background-color: #ffffff;
+    opacity: 0.5;
+
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
